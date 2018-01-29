@@ -1,0 +1,39 @@
+import pygame
+from pygame.locals import *
+import time
+
+from spriteM import *
+from sprite_anime import *
+from font import *
+
+class img:
+
+	
+	#resize
+	facteur = 1
+	#couleur
+	color_font = (193,196,192)
+	color_screen = (137,176,192)
+	color_white = (255,255,255)
+	color_grey = (127,127,127)
+	color_dark = (0,0,0)
+	color_yellow = (251,230,36)
+	color_blue = (12,131,197)
+	color_purple = (182,26,171)
+	color_red = (209,90,80)
+	color_red2 = (223,107,97)
+	color_green = (89,179,109)
+	color_equip = [color_white, color_blue, color_dark, color_purple, color_grey, color_yellow]
+	#font
+	font_texte = "font/larabiefont_rg.ttf"
+
+        #dico d'image
+        i["fond"] = spriteM("assets/img/fond.png")
+        
+        def resize(newsize):
+                img.facteur = newsize[0]/spriteM.screen_x
+                spriteM.facteur = img.facteur
+                for cle in img.i:
+                        img.i[cle].resize(img.facteur)
+	
+                return 1
